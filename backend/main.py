@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from fastapi import FastAPI, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
@@ -14,8 +15,10 @@ from routes.weekly_reviews import router as weekly_reviews_router
 from routes.meetings import router as meetings_router
 from routes.assessments import router as assessments_router
 
-# Load environment variables
-load_dotenv()
+# Load environment variables using absolute path
+BASE_DIR = Path(__file__).resolve().parent
+ENV_PATH = BASE_DIR / ".env"
+load_dotenv(dotenv_path=ENV_PATH, override=True)
 
 app = FastAPI(
     title="GrowLink API",
@@ -34,10 +37,14 @@ origins = [origin.strip() for origin in raw_origins.split(",") if origin.strip()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins if origins else ["*"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    allow_private_network=True,
 )
 
 # Root API Router

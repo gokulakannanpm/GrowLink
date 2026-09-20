@@ -24,8 +24,69 @@ export default function MentorStudentsList() {
     async function loadStudents() {
       setLoading(true);
       try {
-        const data = await api.getStudents();
-        setStudents(data && data.length > 0 ? data : STUDENTS_DATA);
+        const rawStudents = await api.getStudents();
+        if (rawStudents && rawStudents.length > 0) {
+          const enriched = await Promise.all(
+            rawStudents.map(async (student) => {
+              const localMatch = STUDENTS_DATA.find(
+                (s) => s.id === student.id || s.studentId === student.student_id || s.name === student.name
+              );
+
+              let attendanceVal = student.attendance;
+              let catVal = student.cat;
+
+              const [attRes, acadRes] = await Promise.allSettled([
+                api.getStudentAttendance(student.id || student.student_id),
+                api.getStudentAcademics(student.id || student.student_id),
+              ]);
+
+              if (attRes.status === 'fulfilled' && attRes.value && attRes.value.length > 0) {
+                const attList = attRes.value;
+                const totalAttended = attList.reduce((sum, item) => sum + (item.attended_classes || 0), 0);
+                const totalClasses = attList.reduce((sum, item) => sum + (item.total_classes || 0), 0);
+                if (totalClasses > 0) {
+                  attendanceVal = Math.round((totalAttended / totalClasses) * 100);
+                } else {
+                  const pSum = attList.reduce((sum, item) => sum + (item.attendance_percentage || item.attendance || 0), 0);
+                  attendanceVal = Math.round(pSum / attList.length);
+                }
+              }
+
+              if (acadRes.status === 'fulfilled' && acadRes.value && acadRes.value.length > 0) {
+                const acadList = acadRes.value;
+                const c1Sum = acadList.reduce((sum, item) => sum + (item.cat1 || 0), 0);
+                const c2Sum = acadList.reduce((sum, item) => sum + (item.cat2 || 0), 0);
+                const avgSum = acadList.reduce((sum, item) => sum + (item.average || 0), 0);
+                const count = acadList.length;
+                catVal = {
+                  cat1: Math.round(c1Sum / count),
+                  cat2: Math.round(c2Sum / count),
+                  average: Math.round(avgSum / count),
+                };
+              }
+
+              if (attendanceVal === undefined || attendanceVal === null) {
+                attendanceVal = localMatch?.attendance ?? 0;
+              }
+
+              if (!catVal && localMatch?.cat) {
+                catVal = localMatch.cat;
+              }
+
+              return {
+                ...localMatch,
+                ...student,
+                studentId: student.student_id || student.studentId || localMatch?.studentId,
+                avatar: student.avatar_url || student.avatar || localMatch?.avatar,
+                attendance: attendanceVal,
+                cat: catVal,
+              };
+            })
+          );
+          setStudents(enriched);
+        } else {
+          setStudents(STUDENTS_DATA);
+        }
         setIsDevFallback(false);
       } catch (err) {
         console.warn('API error, falling back to local dataset:', err);

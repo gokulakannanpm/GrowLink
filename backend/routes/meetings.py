@@ -3,29 +3,23 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from supabase import Client
 from database import get_supabase
 from models.schemas import MeetingResponse, MeetingCreate, MeetingUpdate
+from routes.student_resolver import resolve_student_uuid
 
 router = APIRouter(tags=["Meetings"])
 
 @router.get("/students/{student_id}/meetings", response_model=List[MeetingResponse])
 def get_student_meetings(student_id: str, db: Client = Depends(get_supabase)):
     """Fetch scheduled and logged mentoring sessions for a student."""
-    student_res = db.table("students").select("id").or_(f"id.eq.{student_id},student_id.eq.{student_id}").execute()
-    if not student_res.data:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Student '{student_id}' not found.")
-    
-    target_uuid = student_res.data[0]["id"]
+    target_uuid = resolve_student_uuid(student_id, db)
     res = db.table("meetings").select("*").eq("student_id", target_uuid).order("scheduled_date", desc=True).execute()
     return res.data or []
 
 @router.post("/students/{student_id}/meetings", response_model=MeetingResponse, status_code=status.HTTP_201_CREATED)
 def create_student_meeting(student_id: str, meeting_data: MeetingCreate, db: Client = Depends(get_supabase)):
     """Schedule a new mentoring session or log an external phone call/interaction."""
-    student_res = db.table("students").select("id").or_(f"id.eq.{student_id},student_id.eq.{student_id}").execute()
-    if not student_res.data:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Student '{student_id}' not found.")
-    
-    target_uuid = student_res.data[0]["id"]
+    target_uuid = resolve_student_uuid(student_id, db)
     mentor_id = meeting_data.mentor_id or "a1111111-1111-1111-1111-111111111111"
+
 
     payload = {
         "student_id": target_uuid,

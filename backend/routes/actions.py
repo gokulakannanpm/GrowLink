@@ -3,29 +3,23 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from supabase import Client
 from database import get_supabase
 from models.schemas import MentorActionResponse, MentorActionCreate, MentorActionUpdate
+from routes.student_resolver import resolve_student_uuid
 
 router = APIRouter(tags=["Mentor Actions"])
 
 @router.get("/students/{student_id}/actions", response_model=List[MentorActionResponse])
 def get_student_actions(student_id: str, db: Client = Depends(get_supabase)):
     """Fetch mentor follow-up actions for a student."""
-    student_res = db.table("students").select("id").or_(f"id.eq.{student_id},student_id.eq.{student_id}").execute()
-    if not student_res.data:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Student '{student_id}' not found.")
-    
-    target_uuid = student_res.data[0]["id"]
+    target_uuid = resolve_student_uuid(student_id, db)
     res = db.table("mentor_actions").select("*").eq("student_id", target_uuid).order("created_at", desc=True).execute()
     return res.data or []
 
 @router.post("/students/{student_id}/actions", response_model=MentorActionResponse, status_code=status.HTTP_201_CREATED)
 def create_student_action(student_id: str, action_data: MentorActionCreate, db: Client = Depends(get_supabase)):
     """Create a new mentor follow-up action item for a student."""
-    student_res = db.table("students").select("id").or_(f"id.eq.{student_id},student_id.eq.{student_id}").execute()
-    if not student_res.data:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Student '{student_id}' not found.")
-    
-    target_uuid = student_res.data[0]["id"]
+    target_uuid = resolve_student_uuid(student_id, db)
     mentor_id = action_data.mentor_id or "a1111111-1111-1111-1111-111111111111"
+
 
     payload = {
         "student_id": target_uuid,

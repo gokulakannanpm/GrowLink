@@ -1,14 +1,22 @@
 import os
+from pathlib import Path
 from typing import Optional
 from dotenv import load_dotenv
 from fastapi import HTTPException, status
 from supabase import create_client, Client
 
-# Load environment variables from .env file
-load_dotenv()
+# Resolve absolute path to .env file relative to this file's location
+BASE_DIR = Path(__file__).resolve().parent
+ENV_PATH = BASE_DIR / ".env"
+
+load_dotenv(dotenv_path=ENV_PATH, override=True)
 
 SUPABASE_URL: Optional[str] = os.getenv("SUPABASE_URL")
 SUPABASE_KEY: Optional[str] = os.getenv("SUPABASE_KEY")
+
+# Safe diagnostic logging (does not expose secret key)
+print(f"SUPABASE_URL loaded: {bool(SUPABASE_URL)}")
+print(f"SUPABASE_KEY loaded: {bool(SUPABASE_KEY)}")
 
 _supabase_client: Optional[Client] = None
 
@@ -38,3 +46,4 @@ def get_supabase() -> Client:
             detail="Supabase connection is not configured. Please set valid SUPABASE_URL and SUPABASE_KEY in backend/.env"
         )
     return _supabase_client
+

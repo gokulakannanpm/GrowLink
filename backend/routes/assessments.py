@@ -3,19 +3,17 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from supabase import Client
 from database import get_supabase
 from models.schemas import AssessmentResponse, AssessmentAnalysisResponse
+from routes.student_resolver import resolve_student_uuid
 
 router = APIRouter(tags=["Assessments"])
 
 @router.get("/students/{student_id}/assessments", response_model=List[AssessmentResponse])
 def get_student_assessments(student_id: str, db: Client = Depends(get_supabase)):
     """Fetch assessment upload records for a student."""
-    student_res = db.table("students").select("id").or_(f"id.eq.{student_id},student_id.eq.{student_id}").execute()
-    if not student_res.data:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Student '{student_id}' not found.")
-    
-    target_uuid = student_res.data[0]["id"]
+    target_uuid = resolve_student_uuid(student_id, db)
     res = db.table("assessments").select("*").eq("student_id", target_uuid).execute()
     return res.data or []
+
 
 @router.get("/assessments/{assessment_id}", response_model=AssessmentResponse)
 def get_assessment(assessment_id: str, db: Client = Depends(get_supabase)):
