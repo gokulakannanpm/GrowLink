@@ -1,109 +1,116 @@
 ::: {align="center"}
+# GrowLink
 
-GrowLink
+### Student Development, Connected.
 
-Student Development, Connected.
-
+```{=html}
 <p>
-
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=2800&pause=900&color=5B4BFF&center=true&vCenter=true&width=760&lines=From+student+data+to+mentor+action;One+shared+view+for+student+development;Academic+%2B+Attendance+%2B+Skills+%2B+Activities" alt="GrowLink animated tagline" />{=html}
-
+```
+`<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=2800&pause=900&color=5B4BFF&center=true&vCenter=true&width=760&lines=From+student+data+to+mentor+action;One+shared+view+for+student+development;Academic+%2B+Attendance+%2B+Skills+%2B+Activities" alt="GrowLink animated tagline" />`{=html}
+```{=html}
 </p>
-
+```
+```{=html}
 <p>
-
-<strong>{=html}A student--mentor development platform for
-colleges.</strong>{=html}<br/>{=html} GrowLink brings fragmented
-student-development data into one shared view,<br/>{=html} highlights
+```
+`<strong>`{=html}A student--mentor development platform for
+colleges.`</strong>`{=html}`<br/>`{=html} GrowLink brings fragmented
+student-development data into one shared view,`<br/>`{=html} highlights
 areas requiring attention, and gives mentors a simple workflow for
 follow-up.
-
+```{=html}
 </p>
-
+```
+```{=html}
 <p>
-
-<img src="https://img.shields.io/badge/HACKDAY-1.0-5B4BFF?style=for-the-badge" alt="HACKDAY 1.0"/>{=html}
-<img src="https://img.shields.io/badge/React-Vite-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React Vite"/>{=html}
-<img src="https://img.shields.io/badge/FastAPI-Python-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>{=html}
-<img src="https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase"/>{=html}
-
+```
+`<img src="https://img.shields.io/badge/HACKDAY-1.0-5B4BFF?style=for-the-badge" alt="HACKDAY 1.0"/>`{=html}
+`<img src="https://img.shields.io/badge/React-Vite-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React Vite"/>`{=html}
+`<img src="https://img.shields.io/badge/FastAPI-Python-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>`{=html}
+`<img src="https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase"/>`{=html}
+```{=html}
 </p>
-
+```
+```{=html}
 <p>
-
-<b>{=html}Team One Piece</b>{=html} · HACKDAY 1.0 · Tech for a
+```
+`<b>`{=html}Team One Piece`</b>`{=html} · HACKDAY 1.0 · Tech for a
 Better Tomorrow
-
+```{=html}
 </p>
-
+```
 :::
 
-🚀 What is GrowLink?
+------------------------------------------------------------------------
+
+## 🚀 What is GrowLink?
 
 College student information is usually scattered across multiple places:
 
-Marks → Attendance → Activities → Courses → Skills → Mentor Notes
+**Marks → Attendance → Activities → Courses → Skills → Mentor Notes**
 
 The data may exist, but the development story of the student is
 fragmented.
 
-GrowLink connects that story.
+**GrowLink connects that story.**
 
 Instead of making mentors search through disconnected records, GrowLink
 provides a shared student-development layer where mentors can:
 
-see the student's academic and development picture
-
-identify areas requiring attention
-
-record observations and mentor actions
-
-schedule or log mentoring sessions
-
-track follow-ups
-
-review weekly progress
+-   see the student's academic and development picture
+-   identify areas requiring attention
+-   record observations and mentor actions
+-   schedule or log mentoring sessions
+-   track follow-ups
+-   review weekly progress
 
 Students get their own focused view of the same development journey.
 
-Student Data → Unified Profile → Identify Areas Requiring Attention
-→ Mentor Intervention → Track Progress
+> **Student Data → Unified Profile → Identify Areas Requiring Attention
+> → Mentor Intervention → Track Progress**
 
-🎯 The Problem
+------------------------------------------------------------------------
 
-Fragmented Student Data
+## 🎯 The Problem
+
+### Fragmented Student Data
 
 Academic marks, attendance, activities, certifications and
 skill-development progress often live in separate systems or records.
 
-Limited Mentor Visibility
+### Limited Mentor Visibility
 
 Mentors may see individual metrics without having one concise view of
 the student's overall development.
 
-Delayed Intervention
+### Delayed Intervention
 
 A falling assessment score, attendance issue or stalled
 skill-development activity can become visible only after the problem has
 grown.
 
-Missing Follow-up Loop
+### Missing Follow-up Loop
 
 Even when a mentor identifies an issue, the action, target date and
 later follow-up may not be tracked in one place.
 
-💡 The GrowLink Approach
+------------------------------------------------------------------------
+
+## 💡 The GrowLink Approach
 
 Traditional flow:
 
+``` text
 Data
   ↓
 Stored
   ↓
 Viewed
+```
 
 GrowLink flow:
 
+``` text
 Student Data
      ↓
 Unified Development Profile
@@ -117,82 +124,70 @@ Action / Meeting / Recommendation
 Follow-up
      ↓
 Progress
+```
 
-GrowLink is not intended to replace a college ERP or LMS.
+GrowLink is **not intended to replace a college ERP or LMS**.
 
 It acts as a development layer that brings relevant student information
 together and makes mentor follow-up easier.
 
-✨ Core Features
+------------------------------------------------------------------------
 
-1. Unified Student Development Profile
+# ✨ Core Features
+
+## 1. Unified Student Development Profile
 
 A mentor can open a student's profile and view:
 
-CGPA and semester trend
+-   CGPA and semester trend
+-   CAT / assessment performance
+-   subject-wise marks
+-   attendance
+-   skill-development activity
+-   courses and certifications
+-   extracurricular participation
+-   mentor notes
+-   mentor actions and follow-ups
+-   mentoring sessions
+-   development timeline
 
-CAT / assessment performance
+------------------------------------------------------------------------
 
-subject-wise marks
-
-attendance
-
-skill-development activity
-
-courses and certifications
-
-extracurricular participation
-
-mentor notes
-
-mentor actions and follow-ups
-
-mentoring sessions
-
-development timeline
-
-2. Mentor Dashboard
+## 2. Mentor Dashboard
 
 Mentors get a roster-level view of assigned students.
 
 The dashboard surfaces:
 
-total mentees
+-   total mentees
+-   students needing attention
+-   students to monitor
+-   students currently on track
+-   attendance indicators
+-   review flags
+-   searchable student roster
 
-students needing attention
+### Mentor roster
 
-students to monitor
+![GrowLink Mentor Roster](./screenshots/mentor-roster.png)
 
-students currently on track
+------------------------------------------------------------------------
 
-attendance indicators
-
-review flags
-
-searchable student roster
-
-Mentor roster
-
-
-
-3. Mentor Actions & Follow-ups
+## 3. Mentor Actions & Follow-ups
 
 Identifying an issue is only the first step.
 
 GrowLink lets mentors create structured follow-up actions with:
 
-subject / development area
-
-action description
-
-status
-
-target follow-up date
-
-additional notes
+-   subject / development area
+-   action description
+-   status
+-   target follow-up date
+-   additional notes
 
 Example:
 
+``` text
 Area: Integration
 
 Action:
@@ -203,32 +198,36 @@ Pending
 
 Follow-up:
 24 Sep 2026
+```
 
+![Mentor Follow-up Action](./screenshots/mentor-follow-up-action.png)
 
+------------------------------------------------------------------------
 
-4. Mentoring Sessions
+## 4. Mentoring Sessions
 
 Mentors can schedule or log interactions such as:
 
-academic follow-ups
-
-in-person meetings
-
-phone / external calls
-
-online review sessions
+-   academic follow-ups
+-   in-person meetings
+-   phone / external calls
+-   online review sessions
 
 Each interaction can contain an agenda, outcome and follow-up context.
 
+![Schedule Mentoring
+Session](./screenshots/schedule-mentoring-session.png)
 
+------------------------------------------------------------------------
 
-5. Academic Performance & CGPA
+## 5. Academic Performance & CGPA
 
 GrowLink combines academic indicators into a development view rather
 than displaying marks in isolation.
 
 Example student snapshot:
 
+``` text
 CGPA       8.42 / 10.0
 Previous   8.18
 Trend      +0.24
@@ -236,39 +235,46 @@ Trend      +0.24
 CAT 1      78
 CAT 2      61
 Average    69.5%
+```
 
+![Academic Performance](./screenshots/academic-performance.png)
 
+------------------------------------------------------------------------
 
-6. Weekly Development Review
+## 6. Weekly Development Review
 
 The weekly review compiles multiple development signals into a concise
 mentor snapshot.
 
 Example:
 
-Area                 Weekly Signal
-
-Attendance           4 / 5 classes
-Academic             CAT 2: 61%
-Skill Development    Coding: 18 → 24 problems
-Activities           1 Symposium
-Courses              72% → 81%
-Previous Follow-up   Integration --- Pending
+  Area                 Weekly Signal
+  -------------------- --------------------------
+  Attendance           4 / 5 classes
+  Academic             CAT 2: 61%
+  Skill Development    Coding: 18 → 24 problems
+  Activities           1 Symposium
+  Courses              72% → 81%
+  Previous Follow-up   Integration --- Pending
 
 The goal is simple:
 
-Give the mentor a useful weekly picture without making them manually
-combine multiple records.
+> **Give the mentor a useful weekly picture without making them manually
+> combine multiple records.**
 
+![Weekly Development
+Review](./screenshots/weekly-development-review.png)
 
+------------------------------------------------------------------------
 
-7. Assessment Intelligence
+## 7. Assessment Intelligence
 
 GrowLink includes an assessment-analysis workflow designed to connect
 assessment evidence with the syllabus.
 
-Intended workflow
+### Intended workflow
 
+``` text
 Assessment / Answer Sheet
           ↓
 OCR / Vision
@@ -282,26 +288,30 @@ Performance Evidence
 Potential Area for Review
           ↓
 Mentor Discussion / Action
+```
 
-The system is deliberately framed around evidence and review, not
+The system is deliberately framed around **evidence and review**, not
 automated judgement.
 
 For example:
 
-Potential area for review: Integration by Parts
+> **Potential area for review:** Integration by Parts
 
 rather than:
 
-"The student is weak."
+> "The student is weak."
 
 This keeps the mentor in the decision loop.
 
+![Assessment Intelligence](./screenshots/assessment-intelligence.png)
 
+------------------------------------------------------------------------
 
-👨‍🏫 Mentor Experience
+# 👨‍🏫 Mentor Experience
 
 The mentor workflow is built around a simple loop:
 
+``` text
 OPEN ROSTER
     ↓
 SELECT STUDENT
@@ -315,88 +325,90 @@ ADD ACTION / NOTE
 SCHEDULE OR LOG SESSION
     ↓
 FOLLOW UP
+```
 
-Mentor profile view
+### Mentor profile view
 
+![Mentor Student Profile](./screenshots/mentor-student-profile.png)
 
+------------------------------------------------------------------------
 
-🎓 Student Experience
+# 🎓 Student Experience
 
-Students have a separate experience focused on their own
-development.
+Students have a separate experience focused on **their own
+development**.
 
 Students can view:
 
-personal development dashboard
+-   personal development dashboard
+-   attendance
+-   CAT / academic performance
+-   CGPA
+-   skill-development progress
+-   courses and activities
+-   mentor recommendations
+-   mentoring sessions
+-   follow-up dates
+-   communication with mentor
 
-attendance
+### Student dashboard
 
-CAT / academic performance
+![GrowLink Student Dashboard](./screenshots/student-dashboard.png)
 
-CGPA
+### Student mentoring sessions
 
-skill-development progress
+![Student Mentoring
+Sessions](./screenshots/student-mentoring-sessions.png)
 
-courses and activities
+### Contact mentor
 
-mentor recommendations
+![Message Mentor](./screenshots/message-mentor.png)
 
-mentoring sessions
+------------------------------------------------------------------------
 
-follow-up dates
-
-communication with mentor
-
-Student dashboard
-
-
-
-Student mentoring sessions
-
-
-
-Contact mentor
-
-
-
-🔐 Role-Based Experience
+# 🔐 Role-Based Experience
 
 GrowLink separates mentor and student workflows.
 
-Capability                          Mentor        Student
+  Capability                          Mentor        Student
+  ----------------------------- ------------------ ---------
+  View own dashboard                    ✅            ✅
+  View assigned students                ✅            ---
+  View own academic data               ---            ✅
+  View attendance                Assigned mentees     Own
+  View activities                Assigned mentees     Own
+  Add mentor notes                      ✅            ---
+  Create follow-up actions              ✅            ---
+  Schedule mentoring sessions           ✅            ---
+  View mentor recommendations          ---            ✅
+  Contact mentor                       ---            ✅
 
-View own dashboard                    ✅            ✅
-View assigned students                ✅            ---
-View own academic data               ---            ✅
-View attendance                Assigned mentees     Own
-View activities                Assigned mentees     Own
-Add mentor notes                      ✅            ---
-Create follow-up actions              ✅            ---
-Schedule mentoring sessions           ✅            ---
-View mentor recommendations          ---            ✅
-Contact mentor                       ---            ✅
+> The current prototype demonstrates role-based frontend navigation and
+> access flow. Production deployment would enforce authorization at the
+> backend/API layer as well.
 
-The current prototype demonstrates role-based frontend navigation and
-access flow. Production deployment would enforce authorization at the
-backend/API layer as well.
+------------------------------------------------------------------------
 
-🧠 Development Intelligence
+# 🧠 Development Intelligence
 
-GrowLink is designed around decision support, not replacing the
+GrowLink is designed around **decision support**, not replacing the
 mentor.
 
 The platform can surface signals such as:
 
+``` text
 Attendance ↓
 CAT performance ↓
 Skill activity ↑
 Previous follow-up = Pending
+```
 
 Instead of forcing the mentor to inspect each metric independently,
 GrowLink turns those signals into a development context.
 
-Example
+### Example
 
+``` text
 CAT 2: 61%
 Attendance: 4 / 5 classes
 Coding activity: 18 → 24
@@ -409,11 +421,15 @@ Weekly Development Summary
 "Attendance remained stable this week.
 Coding activity improved, while the previous
 academic follow-up remains pending."
+```
 
 The mentor then decides what action is appropriate.
 
-🏗️ Technical Architecture
+------------------------------------------------------------------------
 
+# 🏗️ Technical Architecture
+
+``` mermaid
 flowchart TB
 
     U[Student / Mentor] --> FE[React + Vite Frontend]
@@ -432,65 +448,55 @@ flowchart TB
 
     DB --> DATA[Academic • Attendance • Skills • Activities]
     DB --> MENTOR[Mentor Notes • Actions • Meetings]
+```
 
-🛠️ Tech Stack
+------------------------------------------------------------------------
 
-Frontend
+# 🛠️ Tech Stack
 
-React
+### Frontend
 
-Vite
+-   React
+-   Vite
+-   JavaScript
+-   Tailwind CSS
+-   React Router
+-   Lucide React
 
-JavaScript
+### Backend
 
-Tailwind CSS
+-   Python
+-   FastAPI
+-   REST API
 
-React Router
+### Data
 
-Lucide React
+-   Supabase
+-   PostgreSQL
+-   Row Level Security (RLS)
 
-Backend
-
-Python
-
-FastAPI
-
-REST API
-
-Data
-
-Supabase
-
-PostgreSQL
-
-Row Level Security (RLS)
-
-Intelligence Layer
+### Intelligence Layer
 
 Designed for:
 
-assessment analysis
+-   assessment analysis
+-   syllabus mapping
+-   weekly development summaries
+-   evidence-based attention signals
 
-syllabus mapping
+### Development
 
-weekly development summaries
+-   Git
+-   GitHub
+-   VS Code / Antigravity
+-   Vercel-ready frontend
+-   Render-ready backend
 
-evidence-based attention signals
+------------------------------------------------------------------------
 
-Development
+# 📁 Project Structure
 
-Git
-
-GitHub
-
-VS Code / Antigravity
-
-Vercel-ready frontend
-
-Render-ready backend
-
-📁 Project Structure
-
+``` text
 GrowLink/
 │
 ├── src/
@@ -524,87 +530,115 @@ GrowLink/
 ├── .env.example
 ├── README.md
 └── package.json
+```
 
-⚙️ Getting Started
+------------------------------------------------------------------------
 
-Prerequisites
+# ⚙️ Getting Started
 
-Node.js 18+
+## Prerequisites
 
-Python 3.10+
+-   Node.js 18+
+-   Python 3.10+
+-   Supabase project
 
-Supabase project
+## 1. Clone
 
-1. Clone
-
+``` bash
 git clone https://github.com/gokulakannanpm/GrowLink.git
 cd GrowLink
+```
 
-2. Frontend
+## 2. Frontend
 
+``` bash
 npm install
 npm run dev
+```
 
 Frontend runs on:
 
+``` text
 http://localhost:3000
+```
 
-3. Backend
+## 3. Backend
 
+``` bash
 cd backend
 
 python -m venv venv
+```
 
-Windows
+### Windows
 
+``` bash
 venv\Scripts\activate
+```
 
-Install dependencies
+### Install dependencies
 
+``` bash
 pip install -r requirements.txt
+```
 
-Start FastAPI
+### Start FastAPI
 
+``` bash
 uvicorn main:app --reload
+```
 
 Backend runs on:
 
+``` text
 http://127.0.0.1:8000
+```
 
-4. Environment Variables
+## 4. Environment Variables
 
-Create the required .env files from the provided examples.
+Create the required `.env` files from the provided examples.
 
 Frontend:
 
+``` env
 VITE_API_BASE_URL=http://127.0.0.1:8000
+```
 
 Backend environment variables include the Supabase connection details
 and allowed frontend origins.
 
-Never commit real API keys, Supabase secret keys or production
-credentials.
+> Never commit real API keys, Supabase secret keys or production
+> credentials.
 
-🧪 Demo Experience
+------------------------------------------------------------------------
+
+# 🧪 Demo Experience
 
 The prototype includes separate Mentor and Student experiences.
 
-Mentor
+### Mentor
 
+``` text
 mentor@growlink.demo
+```
 
-Student
+### Student
 
+``` text
 rahul@growlink.demo
+```
 
-Demo passwords are intended only for the local prototype. Production
-authentication should use secure identity management and
-backend-enforced authorization.
+> Demo passwords are intended only for the local prototype. Production
+> authentication should use secure identity management and
+> backend-enforced authorization.
 
-📊 Example Development Profile
+------------------------------------------------------------------------
 
-Rahul Kumar
+# 📊 Example Development Profile
 
+### Rahul Kumar
+
+``` text
 CGPA                 8.42
 Previous Semester    8.18
 CGPA Trend           +0.24
@@ -615,9 +649,11 @@ CAT Average          69.5%
 
 Attendance            75%
 Review Flag           Integration
+```
 
 GrowLink connects these individual signals with:
 
+``` text
 Mentor Observation
        ↓
 Mentor Action
@@ -627,301 +663,283 @@ Scheduled Follow-up
 Weekly Review
        ↓
 Progress Tracking
+```
 
 This is the central idea behind the platform.
 
-🎯 Why GrowLink?
+------------------------------------------------------------------------
 
-GrowLink focuses on a gap between student data collection and
-student development follow-up.
+# 🎯 Why GrowLink?
 
-Existing systems often answer:
+GrowLink focuses on a gap between **student data collection** and
+**student development follow-up**.
 
-"What is the student's mark?"
+### Existing systems often answer:
+
+> "What is the student's mark?"
 
 GrowLink aims to help answer:
 
-"What is happening with this student's development, what needs
-attention, and what did the mentor do about it?"
+> "What is happening with this student's development, what needs
+> attention, and what did the mentor do about it?"
 
-The differentiation
+### The differentiation
 
-Traditional Data View     GrowLink Development View
+  Traditional Data View     GrowLink Development View
+  ------------------------- --------------------------------
+  Marks                     Academic trend
+  Attendance                Attendance signal
+  Activities                Skill / participation progress
+  Mentor notes              Structured follow-up
+  Meetings                  Action + outcome
+  Data stored separately    Shared development profile
+  Review happens manually   Weekly review workflow
 
-Marks                     Academic trend
-Attendance                Attendance signal
-Activities                Skill / participation progress
-Mentor notes              Structured follow-up
-Meetings                  Action + outcome
-Data stored separately    Shared development profile
-Review happens manually   Weekly review workflow
+------------------------------------------------------------------------
 
-🏫 Target Users
+# 🏫 Target Users
 
-Students
+### Students
 
 Students get a focused view of their academic and development journey.
 
-Mentors
+### Mentors
 
 Mentors get a consolidated view of assigned students and a structured
 follow-up workflow.
 
-Institutions
+### Institutions
 
 Institutions can use the platform as a development layer across
 departments and mentoring programs.
 
-💼 Market & Business Potential
+------------------------------------------------------------------------
 
-GrowLink can be positioned as an institutional SaaS platform for
+# 💼 Market & Business Potential
+
+GrowLink can be positioned as an **institutional SaaS platform** for
 colleges and universities.
 
 Potential institutional value:
 
-reduced mentor administrative effort
+-   reduced mentor administrative effort
+-   centralized development visibility
+-   structured mentoring workflows
+-   earlier identification of attention areas
+-   better continuity between mentoring sessions
+-   scalable student-development records
 
-centralized development visibility
+### Possible business model
 
-structured mentoring workflows
-
-earlier identification of attention areas
-
-better continuity between mentoring sessions
-
-scalable student-development records
-
-Possible business model
-
+``` text
 Institution
     ↓
 Annual / Institutional SaaS License
     ↓
 Departments / Mentors / Students
+```
 
 Future pricing can be based on institutional size, active students or
 enabled modules.
 
 No fabricated market-size or revenue claims are used in this prototype.
 
-📈 Scalability & Future Roadmap
+------------------------------------------------------------------------
 
-Phase 1 --- Core Platform
+# 📈 Scalability & Future Roadmap
 
-Student development profile
+## Phase 1 --- Core Platform
 
-Mentor dashboard
+-   Student development profile
+-   Mentor dashboard
+-   Academic data
+-   Attendance
+-   Activities
+-   Mentor notes
+-   Follow-up actions
+-   Mentoring sessions
 
-Academic data
+## Phase 2 --- Development Intelligence
 
-Attendance
+-   assessment OCR / vision
+-   syllabus-aware mapping
+-   weekly automated reviews
+-   evidence-based attention signals
+-   personalized recommendations
 
-Activities
+## Phase 3 --- Institution Scale
 
-Mentor notes
+-   department-level dashboards
+-   configurable mentoring rules
+-   ERP / LMS integrations
+-   institutional analytics
+-   notifications
+-   mobile application
+-   secure cloud deployment
 
-Follow-up actions
+------------------------------------------------------------------------
 
-Mentoring sessions
+# 🔮 If We Had More Time
 
-Phase 2 --- Development Intelligence
-
-assessment OCR / vision
-
-syllabus-aware mapping
-
-weekly automated reviews
-
-evidence-based attention signals
-
-personalized recommendations
-
-Phase 3 --- Institution Scale
-
-department-level dashboards
-
-configurable mentoring rules
-
-ERP / LMS integrations
-
-institutional analytics
-
-notifications
-
-mobile application
-
-secure cloud deployment
-
-🔮 If We Had More Time
-
-01 --- Assessment Intelligence
+### 01 --- Assessment Intelligence
 
 Move from prototype workflow to production OCR / vision processing with
 reliable syllabus mapping.
 
-02 --- Automated Weekly Reviews
+### 02 --- Automated Weekly Reviews
 
 Generate concise weekly development summaries from verified academic,
 attendance, skill and activity data.
 
-03 --- Deeper Integrations
+### 03 --- Deeper Integrations
 
 Connect existing college systems rather than requiring institutions to
 duplicate their data.
 
-04 --- Secure Production Authorization
+### 04 --- Secure Production Authorization
 
 Move role enforcement fully into the backend and identity layer.
 
-05 --- Offline / Mobile Mentor Workflow
+### 05 --- Offline / Mobile Mentor Workflow
 
 Enable mentors to review and update student development information from
 mobile devices.
 
-🖼️ Product Preview
+------------------------------------------------------------------------
 
+# 🖼️ Product Preview
+
+```{=html}
 <details>
-
+```
+```{=html}
 <summary>
-
-<strong>{=html}Mentor Dashboard</strong>{=html}
-
+```
+`<strong>`{=html}Mentor Dashboard`</strong>`{=html}
+```{=html}
 </summary>
+```
+![Mentor Dashboard](./screenshots/mentor-roster.png)
 
-
-
+```{=html}
 </details>
-
+```
+```{=html}
 <details>
-
+```
+```{=html}
 <summary>
-
-<strong>{=html}Student Development Profile</strong>{=html}
-
+```
+`<strong>`{=html}Student Development Profile`</strong>`{=html}
+```{=html}
 </summary>
+```
+![Student Profile](./screenshots/mentor-student-profile.png)
 
-
-
+```{=html}
 </details>
-
+```
+```{=html}
 <details>
-
+```
+```{=html}
 <summary>
-
-<strong>{=html}Assessment Intelligence</strong>{=html}
-
+```
+`<strong>`{=html}Assessment Intelligence`</strong>`{=html}
+```{=html}
 </summary>
+```
+![Assessment Intelligence](./screenshots/assessment-intelligence.png)
 
-
-
+```{=html}
 </details>
-
+```
+```{=html}
 <details>
-
+```
+```{=html}
 <summary>
-
-<strong>{=html}Student Experience</strong>{=html}
-
+```
+`<strong>`{=html}Student Experience`</strong>`{=html}
+```{=html}
 </summary>
+```
+![Student Dashboard](./screenshots/student-dashboard.png)
 
-
-
+```{=html}
 </details>
+```
 
-🧩 Current MVP Status
+------------------------------------------------------------------------
 
-Working prototype
+# 🧩 Current MVP Status
 
-React + Vite frontend
+### Working prototype
 
-Responsive app shell
+-   [x] React + Vite frontend
+-   [x] Responsive app shell
+-   [x] Mentor dashboard
+-   [x] Student roster
+-   [x] Student profile
+-   [x] Academic performance
+-   [x] CGPA tracking
+-   [x] Attendance view
+-   [x] Activities / skills
+-   [x] Mentor notes
+-   [x] Mentor actions
+-   [x] Mentoring sessions
+-   [x] Student dashboard
+-   [x] Student-side mentor recommendations
+-   [x] FastAPI backend
+-   [x] Supabase / PostgreSQL integration
+-   [x] Role-based prototype flow
+-   [x] Weekly review workflow
+-   [x] Assessment intelligence workflow UI
 
-Mentor dashboard
+### Next engineering steps
 
-Student roster
+-   [ ] Production authentication
+-   [ ] Backend authorization policies
+-   [ ] Assessment OCR / vision integration
+-   [ ] Production AI integration
+-   [ ] ERP / LMS connectors
+-   [ ] Notifications
+-   [ ] Mobile deployment
 
-Student profile
+------------------------------------------------------------------------
 
-Academic performance
-
-CGPA tracking
-
-Attendance view
-
-Activities / skills
-
-Mentor notes
-
-Mentor actions
-
-Mentoring sessions
-
-Student dashboard
-
-Student-side mentor recommendations
-
-FastAPI backend
-
-Supabase / PostgreSQL integration
-
-Role-based prototype flow
-
-Weekly review workflow
-
-Assessment intelligence workflow UI
-
-Next engineering steps
-
-Production authentication
-
-Backend authorization policies
-
-Assessment OCR / vision integration
-
-Production AI integration
-
-ERP / LMS connectors
-
-Notifications
-
-Mobile deployment
-
-🔒 Privacy & Security Direction
+# 🔒 Privacy & Security Direction
 
 Student development data is sensitive.
 
 The production version should include:
 
-authenticated users
+-   authenticated users
+-   backend-enforced role permissions
+-   least-privilege database access
+-   Row Level Security
+-   secure secret management
+-   audit logging
+-   institution-controlled data retention
+-   encrypted transport and storage
 
-backend-enforced role permissions
+GrowLink is designed so that students see **their own development
+information**, while mentors see **their assigned mentees**.
 
-least-privilege database access
+------------------------------------------------------------------------
 
-Row Level Security
-
-secure secret management
-
-audit logging
-
-institution-controlled data retention
-
-encrypted transport and storage
-
-GrowLink is designed so that students see their own development
-information, while mentors see their assigned mentees.
-
-🌱 Vision
+# 🌱 Vision
 
 GrowLink is built around a simple idea:
 
-Student data should not just be stored. It should help people
-support student development.
+> **Student data should not just be stored. It should help people
+> support student development.**
 
 The long-term vision is a platform where academic performance,
 attendance, skills, activities and mentoring history form one continuous
 development journey.
 
+``` text
 DATA
   ↓
 UNDERSTANDING
@@ -931,12 +949,14 @@ MENTOR ACTION
 FOLLOW-UP
   ↓
 PROGRESS
+```
 
-GrowLink --- connecting student data to meaningful development.
+**GrowLink --- connecting student data to meaningful development.**
+
+------------------------------------------------------------------------
 
 ::: {align="center"}
+### Built with ❤️ for HACKDAY 1.0
 
-Built with ❤️ for HACKDAY 1.0
-
-Team One Piece
+**Team One Piece**
 :::
