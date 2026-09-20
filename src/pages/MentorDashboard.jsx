@@ -1,35 +1,64 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import StatCard from '../components/StatCard';
 import StudentCard from '../components/StudentCard';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import DevBanner from '../components/DevBanner';
 import { STUDENTS_DATA } from '../data/studentsData';
-import { Users, AlertTriangle, Eye, CheckCircle2, Search, Filter } from 'lucide-react';
+import * as api from '../services/api';
+import { Users, AlertTriangle, Eye, CheckCircle2, Search, Filter, Loader2 } from 'lucide-react';
 
 export default function MentorDashboard() {
+  const [students, setStudents] = useState([]);
   const [statusFilter, setStatusFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [isDevFallback, setIsDevFallback] = useState(false);
 
-  // Calculate summary counts
-  const totalCount = STUDENTS_DATA.length;
-  const attentionCount = STUDENTS_DATA.filter(s => s.status === 'Needs Attention').length;
-  const monitorCount = STUDENTS_DATA.filter(s => s.status === 'Monitor').length;
-  const onTrackCount = STUDENTS_DATA.filter(s => s.status === 'On Track').length;
+  useEffect(() => {
+    async function loadData() {
+      setLoading(true);
+      try {
+        const data = await api.getStudents();
+        setStudents(data && data.length > 0 ? data : STUDENTS_DATA);
+        setIsDevFallback(false);
+      } catch (err) {
+        // Fallback to local mock data for demo resilience
+        console.warn('API unavailable or 503, using local fallback data:', err);
+        setStudents(STUDENTS_DATA);
+        setIsDevFallback(true);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadData();
+  }, []);
+
+  // Summary counts
+  const totalCount = students.length;
+  const attentionCount = students.filter(s => s.status === 'Needs Attention').length;
+  const monitorCount = students.filter(s => s.status === 'Monitor').length;
+  const onTrackCount = students.filter(s => s.status === 'On Track').length;
 
   // Filtered student list
   const filteredStudents = useMemo(() => {
-    return STUDENTS_DATA.filter((student) => {
+    return students.filter((student) => {
       const matchesStatus = statusFilter === 'All' || student.status === statusFilter;
       const matchesSearch = 
         student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         student.department.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        student.studentId.toLowerCase().includes(searchQuery.toLowerCase());
+        student.student_id?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        student.studentId?.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesStatus && matchesSearch;
     });
-  }, [statusFilter, searchQuery]);
+  }, [students, statusFilter, searchQuery]);
 
   return (
     <div className="space-y-6">
+      {/* Dev Fallback Banner if API is unconfigured/offline */}
+      <DevBanner isDevFallback={isDevFallback} />
+
       {/* Header Banner */}
       <div className="bg-white rounded-xl p-6 border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-2xs">
         <div>
@@ -140,8 +169,13 @@ export default function MentorDashboard() {
         </div>
       </div>
 
-      {/* Student Grid */}
-      {filteredStudents.length > 0 ? (
+      {/* Loading state */}
+      {loading ? (
+        <div className="bg-white rounded-xl border border-slate-200 p-12 text-center text-slate-500">
+          <Loader2 className="w-8 h-8 animate-spin mx-auto text-indigo-600 mb-2" />
+          <p className="text-sm font-semibold">Loading Student Overview from API...</p>
+        </div>
+      ) : filteredStudents.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredStudents.map((student) => (
             <StudentCard key={student.id} student={student} />

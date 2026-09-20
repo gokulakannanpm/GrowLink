@@ -7,6 +7,97 @@ export const MENTOR_INFO = {
   nextFollowUpDate: "2026-09-24"
 };
 
+export const INITIAL_MEETINGS = [
+  {
+    id: 'meet-101',
+    student_id: 'rahul-kumar',
+    meeting_type: 'Performance Review',
+    mode: 'Phone',
+    scheduled_date: '2026-09-15',
+    scheduled_time: '03:30 PM',
+    status: 'Completed',
+    agenda: 'Review CAT 2 math score drop and DBMS attendance warning.',
+    discussion_summary: 'Discussed test performance drop in Mathematics (64) and Physics (56). Rahul acknowledged struggling with Integration by Parts topics.',
+    outcome: 'Agreed to attend remedial tutorial sessions on Thursdays and complete problem set #3.',
+    action_items: '1. Practice 3 Integration problem sets. 2. Catch up on DBMS lab attendance.',
+    follow_up_date: '2026-09-24'
+  },
+  {
+    id: 'meet-102',
+    student_id: 'rahul-kumar',
+    meeting_type: 'Academic Follow-up',
+    mode: 'In-person',
+    scheduled_date: '2026-09-24',
+    scheduled_time: '02:30 PM',
+    status: 'Scheduled',
+    agenda: 'Follow up on Integration problem set progress and DBMS lab catch-up attendance.',
+    discussion_summary: '',
+    outcome: '',
+    action_items: '',
+    follow_up_date: '2026-09-24'
+  },
+
+  {
+    id: 'meet-201',
+    student_id: 'priya-s',
+    meeting_type: 'Career Discussion',
+    mode: 'In-person',
+    scheduled_date: '2026-09-10',
+    scheduled_time: '02:00 PM',
+    status: 'Completed',
+    agenda: 'Discuss AWS certification progress and student mentor role nomination.',
+    discussion_summary: 'Priya presented her AWS Cloud practitioner badge and expressed interest in leading the Women in Tech student ACM chapter.',
+    outcome: 'Nominated for Student Mentorship role in IT department.',
+    action_items: '1. Prepare mentorship application draft.',
+    follow_up_date: '2026-10-01'
+  },
+
+  {
+    id: 'meet-301',
+    student_id: 'arun-m',
+    meeting_type: 'Attendance Review',
+    mode: 'In-person',
+    scheduled_date: '2026-09-25',
+    scheduled_time: '03:00 PM',
+    status: 'Scheduled',
+    agenda: 'Discuss class attendance consistency and hackathon team registration.',
+    discussion_summary: '',
+    outcome: '',
+    action_items: '',
+    follow_up_date: '2026-09-25'
+  },
+
+  {
+    id: 'meet-401',
+    student_id: 'ananya-r',
+    meeting_type: 'Academic Follow-up',
+    mode: 'Online',
+    scheduled_date: '2026-09-18',
+    scheduled_time: '04:00 PM',
+    status: 'Completed',
+    agenda: 'Review draft abstract for IEEE Conference submission.',
+    discussion_summary: 'Reviewed AI in Healthcare paper draft 2. Structure and experimental setup look solid.',
+    outcome: 'Abstract approved for submission to upcoming IEEE Student Conference.',
+    action_items: '1. Finalize camera-ready PDF.',
+    follow_up_date: '2026-09-30'
+  },
+
+  {
+    id: 'meet-501',
+    student_id: 'karthik-v',
+    meeting_type: 'Performance Review',
+    mode: 'In-person',
+    scheduled_date: '2026-09-26',
+    scheduled_time: '11:00 AM',
+    status: 'Scheduled',
+    agenda: 'Review remedial attendance and pending lab assignment submission.',
+    discussion_summary: '',
+    outcome: '',
+    action_items: '',
+    follow_up_date: '2026-09-26'
+  }
+];
+
 export const STUDENTS_DATA = [
   {
     id: "rahul-kumar",
@@ -75,7 +166,7 @@ export const STUDENTS_DATA = [
         action: "Schedule remedial discussion on Integration by Parts and Definite Integrals",
         status: "Pending",
         followUpDate: "2026-09-24",
-        notes: "Review Module 3 problem set before next CAT assessment.",
+        notes: "Review Module 3 problem set before next assessment.",
         createdAt: "2026-09-18"
       }
     ],
@@ -115,7 +206,7 @@ export const STUDENTS_DATA = [
     year: "II Year",
     section: "A",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
-    email: "priya.s@student.college.edu",
+    email: "priya@growlink.demo",
     phone: "+91 98765 43211",
     attendance: 84,
     status: "On Track",
@@ -204,7 +295,7 @@ export const STUDENTS_DATA = [
     year: "II Year",
     section: "A",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
-    email: "arun.m@student.college.edu",
+    email: "arun@growlink.demo",
     phone: "+91 98765 43212",
     attendance: 81,
     status: "Monitor",
@@ -291,7 +382,7 @@ export const STUDENTS_DATA = [
     year: "II Year",
     section: "B",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
-    email: "ananya.r@student.college.edu",
+    email: "ananya@growlink.demo",
     phone: "+91 98765 43213",
     attendance: 92,
     status: "On Track",
@@ -378,7 +469,7 @@ export const STUDENTS_DATA = [
     year: "II Year",
     section: "B",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
-    email: "karthik.v@student.college.edu",
+    email: "karthik@growlink.demo",
     phone: "+91 98765 43214",
     attendance: 68,
     status: "Needs Attention",
@@ -457,3 +548,14 @@ export const STUDENTS_DATA = [
     }
   }
 ];
+
+// Helper functions for Meetings persistence with localStorage
+export function getStudentMeetings(studentId) {
+  try {
+    const stored = localStorage.getItem('growlink_meetings');
+    let allMeetings = stored ? JSON.parse(stored) : INITIAL_MEETINGS;
+    return allMeetings.filter(m => m.student_id === studentId);
+  } catch {
+    return INITIAL_MEETINGS.filter(m => m.student_id === studentId);
+  }
+}

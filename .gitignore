@@ -9,3 +9,8 @@ venv/
 
 .vscode/
 .idea/
+
+# Backend Environment & Pycache
+backend/.env
+backend/__pycache__/
+backend/*/__pycache__/
